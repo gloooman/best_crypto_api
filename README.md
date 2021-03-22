@@ -1,13 +1,15 @@
 ## BEST CRYPRO PRICE API
 
 ### Start with localhost
-#### Install requirements
+1. Install requirements
 `pip install -r requirements.txt`
 
-#### Start flask
+2. Start redis-server
+
+3. Start flask
 `python main.py`
 
-#### Start websocket
+4. Start websocket
 `python -m ws`
 
 ### Start with docker
