@@ -1,0 +1,27 @@
+version: '3.4'
+services:
+    redis:
+        image: redis:latest
+        command: redis-server --port 6379
+        restart: on-failure
+
+    web:
+      restart: on-failure
+      build: .
+      depends_on:
+        - redis
+      environment:
+        REDIS_HOST: "redis"
+      ports:
+        - "5000:5000"
+        - "8080:80"
+        - "8443:443"
+
+    ws:
+      build: .
+      command: python -m ws
+      restart: always
+      depends_on:
+        - redis
+      environment:
+        REDIS_HOST: "redis"

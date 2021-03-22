@@ -1,0 +1,5 @@
+websocket-client~=0.58.0
+redis~=3.5.3
+Flask~=1.1.2
+python-dotenv~=0.15.0
+gunicorn==20.0.4
