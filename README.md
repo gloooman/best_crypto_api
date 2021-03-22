@@ -20,6 +20,6 @@
 
 `http://0.0.0.0:5000/exchange?exchange=Kraken`
 
-`http://0.0.0.0:5000/exchange?pair=XBTEUR`
+`http://0.0.0.0:5000/exchange?pair=ETHUSDT`
 
-`http://0.0.0.0:5000/exchange?pair=XBTEUR&exchange=Kraken`
+`http://0.0.0.0:5000/exchange?pair=ETHUSDT&exchange=Kraken`

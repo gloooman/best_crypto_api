@@ -39,8 +39,7 @@ class BaseHandler:
 
 class Binance(BaseHandler):
     WS_URL = 'wss://stream.binance.com:9443/ws/!bookTicker'
-    # WS_URL = 'wss://stream.binance.com:9443/stream?streams=ethusdt@bookTicker/btcusdc@bookTicker'
-    # WS_URL = 'wss://stream.binance.com:9443/ws/ethusdt@bookTicker/btcusdc@bookTicker'
+    # WS_URL = 'wss://stream.binance.com:9443/ws/ethusdt@bookTicker/btcusdc@bookTicker/btcc@bookTicker'
 
     def on_message(self, ws, message):
         resp = json.loads(message)
@@ -60,7 +59,7 @@ class Kraken(BaseHandler):
     def on_open(self, ws):
         msg = {
             "event": "subscribe",
-            "pair": ["XBT/USD", "XBT/EUR", "ETH/USD", "ETH/EUR"],
+            "pair": ["XBT/USD", "XBT/EUR", "ETH/USD", "ETH/EUR", 'BTC/USDC', 'ETH/USDT'],
             "subscription": {"name": "ticker"}
         }
         ws.send(json.dumps(msg))
